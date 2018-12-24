@@ -1,0 +1,17 @@
+.wrapper {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.error {
+  color: #ffffff;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 13px;
+  background: rgb(210, 88, 84);
+  display: inline-block;
+  padding: 8px 15px 12px;
+}

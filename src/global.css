@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+    font-family: 'Muli', 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-size: cover;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    letter-spacing: 0.012em;
+    width: 100%;
+    height: 100%;
+}
+
+a, button, input, textarea {
+    outline: none;
+    border: 0;
+    background: none;
+    font-family: 'Muli', 'Open Sans', sans-serif;
+}
+
+@font-face {
+    font-family: Muli;
+    src: url('./fonts/Muli/Muli-Black.ttf');
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Muli;
+    src: url('./fonts/Muli/Muli-Bold.ttf');
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: Muli;
+    src: url('./fonts/Muli/Muli-Light.ttf');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Muli;
+    src: url('./fonts/Muli/Muli-SemiBold.ttf');
+    font-style: normal;
+    font-weight: 600;
+}
+
+
+@font-face {
+    font-family: Muli;
+    src: url('./fonts/Muli/Muli-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: Muli;
+    src: url('./fonts/Muli/Muli-ExtraLight.ttf');
+    font-style: normal;
+    font-weight: 200;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.url {
+    cursor: pointer;
+}

@@ -1,0 +1,95 @@
+.gist {
+  width: 400px;
+  height: 220px;
+  background-color: #23292d;
+  border-radius: 8px;
+  color: #fff;
+  margin: 10px 30px 20px 0;
+  transition: all .1s ease-out;
+  box-shadow: 0 0 0 0 transparent,0 0 0 0 transparent;
+}
+
+.detailsContainer {
+  padding: 25px;
+  overflow: auto;
+  height: 154px;
+}
+
+.gistFooter {
+  border-top: 1px solid rgba(36, 41, 46, 0.5);
+  padding: 10px 25px;
+}
+
+.tagWrapper {
+  float: left;
+}
+
+.forksWrapper {
+  float: right;
+}
+
+.user {
+  height: 20px;
+  cursor: pointer;
+  background-color: #515151;
+  color: #ffffff;
+  margin: 0 2px;
+  border-radius: 5px;
+  border: 1px solid #919496;
+}
+
+.label {
+  float: left;
+  width: 105px;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.value {
+  float: left;
+  width: calc(100% - 105px);
+  display: inline-block;
+  padding-bottom: 10px;
+  word-break: break-word;
+}
+
+.forkIcon {
+  background-image: url('../../assets/logo.png');
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.extraTags {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+}
+
+.list {
+  min-width: 50px;
+  min-height: 20px;
+  position: absolute;
+  background-color: rgb(35, 41, 44);
+  bottom: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.46);
+  padding: 10px;
+  margin: 5px;
+  transform: translate(-50%, 0);
+}
+
+.extra {
+  background-color: rgb(145, 148, 150);
+  font-size: 10px;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 19px;
+}

@@ -1,0 +1,12 @@
+.inputWrapper {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 9px;
+    color: #191c1e;
+    right: 13px;
+    font-size: 18px;
+    cursor: pointer;
+}
