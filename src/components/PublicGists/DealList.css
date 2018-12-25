@@ -8,7 +8,10 @@
 .bannerImg {
   margin: auto;
   display: block;
-  padding: 130px;
+  text-transform: uppercase;
+  font-size: 70px;
+  text-align: center;
+  padding-top: 130px;
   padding-bottom: 30px;
 }
 
@@ -71,7 +74,7 @@
 }
 
 .bannerWrapper {
-  background-color: #2f363d;
+  background-color: #f25d48;
   height: 380px;
 }
 
@@ -80,6 +83,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 60px;
+}
+
+.input {
+  margin-right: 25px;
 }
 
 .icon {

@@ -45,7 +45,7 @@ export default function dealsReducer(state = initialState, action) {
             return state.update('error', () => '');
 
         case ACTION_CLEAR_GISTS:
-            return state.update('deals', () => fromJS({}));
+            return state.update('filteredDeals', () => fromJS({}));
 
         default:
             return state;

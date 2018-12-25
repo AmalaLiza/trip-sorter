@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import React, { Component, Fragment } from 'react';
 import connect from 'react-redux/es/connect/connect';
 import AutoInput from '../AutoInput/AutoInput';
-import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import styles from '../PublicGists/DealList.css';
-import TextField from '../TextField/TextField';
 import { selector } from '../PublicGists/deals.selector';
-import banner from '../../assets/banner.png';
 import Footer from '../Footer/Footer';
 import {setFilters} from "../../actions/action-creator";
 
@@ -47,22 +44,23 @@ class Home extends Component {
     return (
       <Fragment>
         <div className={styles.bannerWrapper}>
-          <img className={styles.bannerImg} src={banner} />
+          <div className={styles.bannerImg} >
+            Trip Sorter
+          </div>
         </div>
         <section className={styles.search}>
           <AutoInput
             suggestions={departure}
-            placeHolder="From"
-            classes={{ wrapper: styles.departure }}
+            placeHolder="From where?"
+            classes={{ wrapper: styles.input }}
             onSelect={this.getFromValue}
           />
           <AutoInput
             suggestions={arrival}
-            placeHolder="To"
-            classes={{ wrapper: styles.arrival }}
+            placeHolder="To where?"
+            classes={{ wrapper: styles.input }}
             onSelect={this.getToValue}
           />
-          <ButtonGroup />
           <i className={classNames('fa fa-search', styles.icon)} onClick={this.onSearchClick} />
         </section>
         <Footer />
