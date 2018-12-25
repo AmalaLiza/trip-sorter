@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Immutable from 'immutable';
-import GistDetails from './GistDetails';
-import Avatar from '../Avatar/Avatar';
-import Tag from '../Tag/Tag';
-import List from './List';
-import { loadAllForks } from '../../actions/action-creator';
-import { selectGists } from '../PublicGists/deals.selector';
+import { selector } from '../PublicGists/deals.selector';
 import styles from './Gist.css';
 
 /**
@@ -38,61 +33,16 @@ class Gist extends Component {
 
   };
 
-  componentWillMount() {
-    // To dispatch action to load all forks of each gists.
-    this.props.dispatch(loadAllForks(this.props.gist.get('forks_url'), this.props.gist.get('id')));
-  }
-
   render() {
-    const { gist } = this.props;
+    const { deals } = this.props;
 
     return (
       <div className={styles.gist}>
-
-        <GistDetails
-          className={styles.detailsContainer}
-          gist={gist}
-        />
-
-        <div className={`${styles.gistFooter} clearfix`}>
-          <div className={styles.tagWrapper}>
-
-            {gist.get('files')
-              .toArray()
-              .filter((a, index) => index < 3)
-              .map(file => (
-                <Tag
-                  key={file.get('filename')}
-                  value={file.get('language') && file.get('language').length
-                    ? file.get('language') : getTag(file.get('type'))}
-                />
-              ))}
-
-            {gist.get('files').size > 3 ? <List gist={gist} /> : null}
-
-          </div>
-
-          {gist.get('forks') && gist.get('forks').size ? (
-            <div className={styles.forksWrapper}>
-              <span className={styles.forkIcon} />
-              {gist.get('forks')
-                .map(fork => (
-                  <Avatar
-                    key={fork.get('forks_url')}
-                    className={styles.user}
-                    onClick={() => window.open(fork.getIn(['html_url']))}
-                    src={fork.getIn(['owner', 'avatar_url'])}
-                  />
-                ))}
-
-            </div>
-          ) : null}
-
-        </div>
+          {deals}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => selectGists(state);
+const mapStateToProps = state => selector(state);
 export default connect(mapStateToProps)(Gist);

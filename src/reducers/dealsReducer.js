@@ -3,13 +3,14 @@ import {
     ACTION_CLEAR_GISTS,
     ACTION_HIDE_ERROR,
     ACTION_LOAD_DEALS_ERROR,
-    ACTION_LOAD_DEALS_SUCCESS,
+    ACTION_LOAD_DEALS_SUCCESS, ACTION_SET_FILTERS,
 } from '../actions/action-constants';
 import {normalizeItems} from "../utils";
 
 const initialState = fromJS({
     user: {},
     deals: {},
+    filteredDeals: {},
     error: '',
 });
 
@@ -29,6 +30,12 @@ export default function dealsReducer(state = initialState, action) {
             state = state.set('arrival', accu.arrival);
             state = state.set('departure', accu.departure);
             return state.set('deals', fromJS(normalizeItems(action.payload.deals, 'reference')));
+        }
+
+        case ACTION_SET_FILTERS: {
+            state = state.set('to', action.payload.to);
+            state = state.set('from', action.payload.from);
+            return state.update('filteredDeals', () => state.get('deals').filter((deal) => deal.get('arrival') === action.payload.to && deal.get('departure') === action.payload.from));
         }
 
         case ACTION_LOAD_DEALS_ERROR:

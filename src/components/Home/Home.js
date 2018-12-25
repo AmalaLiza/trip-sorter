@@ -9,6 +9,7 @@ import TextField from '../TextField/TextField';
 import { selector } from '../PublicGists/deals.selector';
 import banner from '../../assets/banner.png';
 import Footer from '../Footer/Footer';
+import {setFilters} from "../../actions/action-creator";
 
 class Home extends Component {
   constructor(props) {
@@ -38,26 +39,15 @@ class Home extends Component {
 
   onSearchClick() {
     console.log(this.state.from, this.state.to);
+    this.props.dispatch(setFilters(this.state.to, this.state.from))
   }
 
   render() {
     const { dispatch, departure, arrival } = this.props;
-    console.log(departure)
     return (
       <Fragment>
         <div className={styles.bannerWrapper}>
           <img className={styles.bannerImg} src={banner} />
-        </div>
-        <div className={styles.searchWrapper}>
-          <span className={styles.searchHint}>
-            Search gists by typing username and hit enter
-          </span>
-          <TextField
-            onclick={value => dispatch(loadPublicGistsOfUser(value))}
-            type="text"
-            className={styles.searchBox}
-            onEnter={value => dispatch(loadPublicGistsOfUser(value))}
-          />
         </div>
         <section className={styles.search}>
           <AutoInput

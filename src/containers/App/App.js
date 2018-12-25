@@ -44,10 +44,10 @@ class App extends Component {
   }
 
   render() {
-    const { gists, error } = this.props;
+    const { filteredDeals, error } = this.props;
     return (
       <Fragment>
-        {gists.size ? <PublicGists /> : <Home />}
+        {filteredDeals.size ? <PublicGists /> : <Home />}
         {error ? (
           <ErrorPopup
             error={error}

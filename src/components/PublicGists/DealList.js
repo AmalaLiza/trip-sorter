@@ -5,7 +5,7 @@ import Immutable from 'immutable';
 import Gist from '../Gist/Gist';
 import UserDetails from '../UserDetails/UserDetails';
 import { clearGists } from '../../actions/action-creator';
-import { selectGists } from './deals.selector';
+import { selector } from './deals.selector';
 import styles from './DealList.css';
 
 const GistCount = ({ count }) => (
@@ -54,7 +54,7 @@ const DealList = ({ deals, user, dispatch }) => (
     {deals.size ? <GistCount count={deals.size} /> : null}
 
     <GistWrapper className={styles.gistWrapper}>
-      {gists
+      {deals
         .valueSeq()
         .map(gist => (
           <Gist
@@ -74,5 +74,5 @@ DealList.propTypes = {
   user: PropTypes.instanceOf(Immutable.Map).isRequired,
 };
 
-const mapStateToProps = state => selectGists(state);
+const mapStateToProps = state => selector(state);
 export default connect(mapStateToProps)(DealList);

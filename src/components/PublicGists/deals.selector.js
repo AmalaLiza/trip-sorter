@@ -1,5 +1,5 @@
 export const selector = state => ({
-    deals: state.deals.get('deals'),
+    deals: state.deals.get('filteredDeals'),
     user: state.deals.get('user'),
     data: state.deals.get('deals'),
     departure: state.deals.get('departure'),
@@ -8,5 +8,5 @@ export const selector = state => ({
 
 export const getError = state => ({
     error: state.deals.get('error'),
-    deals: state.deals.get('deals'),
+    filteredDeals: state.deals.get('filteredDeals'),
 });
