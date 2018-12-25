@@ -5,8 +5,8 @@ import Immutable from 'immutable';
 import Gist from '../Gist/Gist';
 import UserDetails from '../UserDetails/UserDetails';
 import { clearGists } from '../../actions/action-creator';
-import { selectGists } from './gists.selector';
-import styles from './PublicGists.css';
+import { selectGists } from './deals.selector';
+import styles from './DealList.css';
 
 const GistCount = ({ count }) => (
   <div className={`${styles.gistCount} bold`}>
@@ -48,10 +48,10 @@ PublicGistsWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const PublicGists = ({ gists, user, dispatch }) => (
+const DealList = ({ deals, user, dispatch }) => (
   <PublicGistsWrapper className={styles.wrapper}>
-    {gists.size ? <UserDetails user={user} clearGists={() => dispatch(clearGists())} /> : null}
-    {gists.size ? <GistCount count={gists.size} /> : null}
+    {deals.size ? <UserDetails user={user} clearGists={() => dispatch(clearGists())} /> : null}
+    {deals.size ? <GistCount count={deals.size} /> : null}
 
     <GistWrapper className={styles.gistWrapper}>
       {gists
@@ -68,11 +68,11 @@ const PublicGists = ({ gists, user, dispatch }) => (
   </PublicGistsWrapper>
 );
 
-PublicGists.propTypes = {
+DealList.propTypes = {
   gists: PropTypes.instanceOf(Immutable.Map).isRequired,
   dispatch: PropTypes.func.isRequired,
   user: PropTypes.instanceOf(Immutable.Map).isRequired,
 };
 
 const mapStateToProps = state => selectGists(state);
-export default connect(mapStateToProps)(PublicGists);
+export default connect(mapStateToProps)(DealList);

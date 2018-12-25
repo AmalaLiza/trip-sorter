@@ -7,7 +7,7 @@ import Avatar from '../Avatar/Avatar';
 import Tag from '../Tag/Tag';
 import List from './List';
 import { loadAllForks } from '../../actions/action-creator';
-import { selectGists } from '../PublicGists/gists.selector';
+import { selectGists } from '../PublicGists/deals.selector';
 import styles from './Gist.css';
 
 /**

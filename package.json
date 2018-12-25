@@ -1,7 +1,7 @@
 {
-  "name": "github-gist-app",
+  "name": "trip-sorter",
   "version": "1.0.0",
-  "description": "A single page application which uses Github's gist API.",
+  "description": "A single page application for sorting and searching details about trips.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",

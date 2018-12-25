@@ -4,10 +4,9 @@ import React, { Component, Fragment } from 'react';
 import connect from 'react-redux/es/connect/connect';
 import AutoInput from '../AutoInput/AutoInput';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
-import styles from '../PublicGists/PublicGists.css';
+import styles from '../PublicGists/DealList.css';
 import TextField from '../TextField/TextField';
-import { loadPublicGistsOfUser } from '../../actions/action-creator';
-import { selectGists } from '../PublicGists/gists.selector';
+import { selector } from '../PublicGists/deals.selector';
 import banner from '../../assets/banner.png';
 import Footer from '../Footer/Footer';
 
@@ -38,12 +37,12 @@ class Home extends Component {
   }
 
   onSearchClick() {
-    this.props.data;
     console.log(this.state.from, this.state.to);
   }
 
   render() {
     const { dispatch, departure, arrival } = this.props;
+    console.log(departure)
     return (
       <Fragment>
         <div className={styles.bannerWrapper}>
@@ -86,5 +85,5 @@ Home.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => selectGists(state);
+const mapStateToProps = state => selector(state);
 export default connect(mapStateToProps)(Home);
