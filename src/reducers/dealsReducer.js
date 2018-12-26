@@ -11,51 +11,14 @@ import {normalizeItems} from "../utils";
 const initialState = fromJS({
     user: {},
     deals: {},
-    filteredDeals: {
-        TBP0345: {
-            transport: 'train',
-            departure: 'Budapest',
-            arrival: 'Prague',
-            duration: {
-                h: '03',
-                m: '45'
-            },
-            cost: 160,
-            discount: 0,
-            reference: 'TBP0345'
-        },
-        CBP0530: {
-            transport: 'car',
-            departure: 'Budapest',
-            arrival: 'Prague',
-            duration: {
-                h: '05',
-                m: '30'
-            },
-            cost: 120,
-            discount: 0,
-            reference: 'CBP0530'
-        },
-        BBP0615: {
-            transport: 'bus',
-            departure: 'Budapest',
-            arrival: 'Prague',
-            duration: {
-                h: '06',
-                m: '15'
-            },
-            cost: 40,
-            discount: 0,
-            reference: 'BBP0615'
-        }
-    },
+    filteredDeals: {},
     error: '',
 });
 
 export default function dealsReducer(state = initialState, action) {
     switch (action.type) {
         case ACTION_LOAD_DEALS_SUCCESS: {
-            const accu = action.payload.deals.reduce((acc, prev) => {
+            const data = action.payload.deals.reduce((acc, prev) => {
                 if (acc.arrival.indexOf(prev.arrival) === -1) {
                     acc.arrival.push(prev.arrival);
                 }
@@ -64,9 +27,8 @@ export default function dealsReducer(state = initialState, action) {
                 }
                 return acc;
             }, {arrival: [], departure: []});
-            console.log(accu);
-            state = state.set('arrival', accu.arrival);
-            state = state.set('departure', accu.departure);
+            state = state.set('arrival', data.arrival);
+            state = state.set('departure', data.departure);
             return state.set('deals', fromJS(normalizeItems(action.payload.deals, 'reference')));
         }
 
