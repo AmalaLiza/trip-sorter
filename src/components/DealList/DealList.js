@@ -77,18 +77,18 @@ class DealList extends Component {
 
     return (
       <DealsWrapper className={styles.wrapper}>
+        <div className={styles.buttonWrapper}>
+          <ButtonGroup type={sortType} onClick={this.sort} />
 
-        <ButtonGroup type={sortType} onClick={this.sort} />
-
-        {filteredDeals.size
-          ? (
-            <DealCount
-              count={filteredDeals.size}
-              from={filteredDeals.first().get('departure')}
-              to={filteredDeals.first().get('arrival')}
-            />
-          ) : null}
-
+          {filteredDeals.size
+            ? (
+              <DealCount
+                count={filteredDeals.size}
+                from={filteredDeals.first().get('departure')}
+                to={filteredDeals.first().get('arrival')}
+              />
+            ) : null}
+        </div>
         <DealWrapper className={styles.dealWrapper}>
           {filteredDeals
             .valueSeq()
