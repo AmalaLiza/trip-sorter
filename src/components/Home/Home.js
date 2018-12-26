@@ -6,7 +6,8 @@ import AutoInput from '../AutoInput/AutoInput';
 import styles from '../DealList/DealList.css';
 import { selector } from '../DealList/deals.selector';
 import Footer from '../Footer/Footer';
-import {setFilters} from "../../actions/action-creator";
+import banner from '../../assets/banner.jpg';
+import { setFilters } from '../../actions/action-creator';
 
 class Home extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class Home extends Component {
 
   onSearchClick() {
     console.log(this.state.from, this.state.to);
-    this.props.dispatch(setFilters(this.state.to, this.state.from))
+    this.props.dispatch(setFilters(this.state.to, this.state.from));
   }
 
   render() {
@@ -44,7 +45,7 @@ class Home extends Component {
     return (
       <Fragment>
         <div className={styles.bannerWrapper}>
-          <div className={styles.bannerImg} >
+          <div className={styles.bannerImg}>
             Trip Sorter
           </div>
         </div>

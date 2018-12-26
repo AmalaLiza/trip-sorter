@@ -74,8 +74,10 @@
 }
 
 .bannerWrapper {
-  background-color: #f25d48;
   height: 380px;
+  background: url("./../../assets/banner.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
 }
 
 
