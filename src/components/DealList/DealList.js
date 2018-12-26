@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Immutable from 'immutable';
@@ -34,37 +34,58 @@ DealWrapper.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const PublicGistsWrapper = ({children, className}) => (
+const DealsWrapper = ({children, className}) => (
     <div className={className}>
         {children}
     </div>
 );
 
-PublicGistsWrapper.propTypes = {
+DealsWrapper.propTypes = {
     className: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 };
 
-const DealList = ({filteredDeals}) => (
-    <PublicGistsWrapper className={styles.wrapper}>
+class DealList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sortType: 'cheapest'
+        };
+        this.sort = this.sort.bind(this);
+    }
 
-        <ButtonGroup/>
-        {filteredDeals.size ? <DealCount count={filteredDeals.size}/> : null}
+    sort(sortType) {
+        this.setState({sortType})
+    }
 
-        <DealWrapper className={styles.dealWrapper}>
-            {filteredDeals
-                .valueSeq()
-                .map(deal => (
-                    <Deal
-                        key={deal.get('reference')}
-                        deal={deal}
-                    />
-                ))}
+    render() {
+        const {filteredDeals} = this.props;
+        const {sortType} = this.state;
 
-        </DealWrapper>
+        return <DealsWrapper className={styles.wrapper}>
 
-    </PublicGistsWrapper>
-);
+            <ButtonGroup type={sortType} onClick={this.sort}/>
+
+            {filteredDeals.size ? <DealCount count={filteredDeals.size}/> : null}
+
+            <DealWrapper className={styles.dealWrapper}>
+                {filteredDeals
+                    .valueSeq()
+                    .sort((a, b) => {
+                        return sortType === 'cheapest' ? a.get('cost') - b.get('cost') : b.getIn(['duration', 'h']) - a.getIn(['duration', 'h'])
+                    })
+                    .map(deal => (
+                        <Deal
+                            key={deal.get('reference')}
+                            deal={deal}
+                        />
+                    ))}
+
+            </DealWrapper>
+
+        </DealsWrapper>;
+    }
+}
 
 DealList.propTypes = {
     gists: PropTypes.instanceOf(Immutable.Map).isRequired,

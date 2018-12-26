@@ -5,17 +5,14 @@ import styles from './ButtonGroup.css';
 class ButtonGroup extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      type: 'cheapest',
-    };
   }
 
   render() {
-    const { type } = this.state;
+    const { onClick, type } = this.props;
     return (
       <div className={styles.buttonGroup}>
-        <span className={classNames({ [styles.active]: (type === 'cheapest') }, styles.button)}>Cheapest</span>
-        <span className={classNames({ [styles.active]: (type === 'fastest') }, styles.button)}>Fastest</span>
+        <span className={classNames({ [styles.active]: (type === 'cheapest') }, styles.button)} onClick={() => onClick('cheapest')}>Cheapest</span>
+        <span className={classNames({ [styles.active]: (type === 'fastest') }, styles.button)} onClick={() => onClick('fastest')}>Fastest</span>
       </div>
     );
   }
