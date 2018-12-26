@@ -10,13 +10,13 @@ import ButtonGroup from '../ButtonGroup/ButtonGroup';
 const DealCount = ({ count, from, to }) => (
   <div className={`${styles.dealCount} bold`}>
     <h3 className={styles.dealCountHeading}>
-            AVAILABLE DEALS from
+            available deals from
       {' '}
-      {from}
+      {from.toUpperCase()}
       {' '}
 to
       {' '}
-      {to}
+      {to.toUpperCase()}
 (
       {count}
 )

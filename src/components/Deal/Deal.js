@@ -19,9 +19,11 @@ class Deal extends Component {
         <div className={styles.deal}>
           <div className={styles.dealWrapper}>
             <div>
-                <span className={styles.label}>
-                    Duration:
-                </span>
+              <i className={`fa fa-${deal.get('transport')}`} aria-hidden="true" />
+              {deal.get('transport')}
+            </div>
+            <div>
+              <i className="fa fa-clock-o" aria-hidden="true" />
               {deal.getIn(['duration', 'h'])}
               {' '}
               Hrs
@@ -31,13 +33,6 @@ class Deal extends Component {
               Minutes
             </div>
             <div>
-              <i className={`fa fa-${deal.get('transport')}`} aria-hidden="true" />
-            </div>
-            <div>
-              <div>
-Cost: $
-                {deal.get('cost')}
-              </div>
               <div>
 Discount: $
                 {deal.get('discount')}
@@ -46,6 +41,10 @@ Discount: $
 Reference Id:
                 {deal.get('reference')}
               </div>
+            </div>
+            <div>
+              Cost:
+              <span className={styles.cost}>{` $${deal.get('cost')}`}</span>
             </div>
           </div>
         </div>
