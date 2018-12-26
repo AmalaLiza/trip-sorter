@@ -24,15 +24,6 @@ const getSuggestions = (list, value) => {
 };
 
 class AutoInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      focused: false,
-      value: '',
-      suggestions: this.props.suggestions,
-    };
-  }
-
     static propTypes = {
       suggestions: PropTypes.instanceOf(Array),
       classes: PropTypes.instanceOf(Object),
@@ -46,6 +37,15 @@ class AutoInput extends React.Component {
       placeHolder: '',
       onSelect: f => f,
     };
+
+    constructor(props) {
+      super(props);
+      this.state = {
+        focused: false,
+        value: '',
+        suggestions: this.props.suggestions,
+      };
+    }
 
     onChange = (event, { newValue }) => {
       this.setState({

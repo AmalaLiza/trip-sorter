@@ -4,8 +4,18 @@
   background: #191c1f;
 }
 
-.buttonWrapper{
-  padding: 50px 0 0 80px;
+.backBtn {
+  position: absolute;
+  left: -55px;
+  bottom: 15%;
+  font-size: 37px;
+  cursor: pointer;
+}
+
+.buttonWrapper {
+  padding: 50px 20px 0 80px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bannerImg {
@@ -89,7 +99,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 .input {

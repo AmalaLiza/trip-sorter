@@ -3,7 +3,7 @@
   display: flex;
   width: 200px;
   flex-direction: row;
-  flex-wrap: no-wrap;
+  height: 100%;
   align-content: stretch;
   overflow: hidden;
   border-radius: 20px;

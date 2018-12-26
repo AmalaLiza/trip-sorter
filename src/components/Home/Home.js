@@ -33,17 +33,16 @@ class Home extends Component {
   }
 
   onSearchClick() {
-    console.log(this.state.from, this.state.to);
     this.props.dispatch(setFilters(this.state.to, this.state.from));
   }
 
   render() {
-    const { dispatch, departure, arrival } = this.props;
+    const { departure, arrival } = this.props;
     return (
       <Fragment>
         <div className={styles.bannerWrapper}>
           <div className={styles.bannerImg}>
-            Trip Sorter
+                        Trip Sorter
           </div>
         </div>
         <section className={styles.search}>
@@ -68,7 +67,15 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  departure: PropTypes.instanceOf(Array),
+  arrival: PropTypes.instanceOf(Array),
+  dispatch: PropTypes.func,
+};
+
+Home.defaultProps = {
+  departure: [],
+  arrival: [],
+  dispatch: f => f,
 };
 
 const mapStateToProps = state => selector(state);

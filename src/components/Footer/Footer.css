@@ -1,17 +1,17 @@
-.container{
+.container {
     position: fixed;
     bottom: 0;
     width: 100%;
     color: #f6fff9;
 }
 
-.wrapper{
+.wrapper {
     height: 75px;
-    background-color: #f45c43;
-
+    background-color: #384152db;
     padding: 10px 60px;
     position: relative;
-
+    display: flex;
+    justify-content: center;
 }
 
 .logoWrapper {
