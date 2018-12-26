@@ -2,38 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Immutable from 'immutable';
-import Gist from '../Gist/Gist';
-import UserDetails from '../UserDetails/UserDetails';
-import {clearGists} from '../../actions/action-creator';
+import Deal from '../Deal/Deal';
 import {selector} from './deals.selector';
 import styles from './DealList.css';
 import ButtonGroup from "../ButtonGroup/ButtonGroup";
 
-const GistCount = ({count}) => (
-    <div className={`${styles.gistCount} bold`}>
-        <h3 className={styles.gistCountHeading}>
-            GISTS (
-            {count}
-            )
+const DealCount = ({count}) => (
+    <div className={`${styles.dealCount} bold`}>
+        <h3 className={styles.dealCountHeading}>
+            AVAILABLE DEALS ({count})
         </h3>
     </div>
 );
 
-GistCount.propTypes = {
+DealCount.propTypes = {
     count: PropTypes.number,
 };
 
-GistCount.defaultProps = {
+DealCount.defaultProps = {
     count: 0,
 };
 
-const GistWrapper = ({className, children}) => (
+const DealWrapper = ({className, children}) => (
     <div className={className}>
         {children}
     </div>
 );
 
-GistWrapper.propTypes = {
+DealWrapper.propTypes = {
     className: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 };
@@ -49,24 +45,23 @@ PublicGistsWrapper.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const DealList = ({deals, user, dispatch}) => (
+const DealList = ({filteredDeals}) => (
     <PublicGistsWrapper className={styles.wrapper}>
 
         <ButtonGroup/>
-        {deals.size ? <UserDetails user={user} clearGists={() => dispatch(clearGists())}/> : null}
-        {deals.size ? <GistCount count={deals.size}/> : null}
+        {filteredDeals.size ? <DealCount count={filteredDeals.size}/> : null}
 
-        <GistWrapper className={styles.gistWrapper}>
-            {deals
+        <DealWrapper className={styles.dealWrapper}>
+            {filteredDeals
                 .valueSeq()
-                .map(gist => (
-                    <Gist
-                        key={gist.get('id')}
-                        gist={gist}
+                .map(deal => (
+                    <Deal
+                        key={deal.get('reference')}
+                        deal={deal}
                     />
                 ))}
 
-        </GistWrapper>
+        </DealWrapper>
 
     </PublicGistsWrapper>
 );

@@ -1,5 +1,5 @@
 export const selector = state => ({
-    deals: state.deals.get('filteredDeals'),
+    filteredDeals: state.deals.get('filteredDeals'),
     user: state.deals.get('user'),
     data: state.deals.get('deals'),
     departure: state.deals.get('departure'),

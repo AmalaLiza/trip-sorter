@@ -3,14 +3,52 @@ import {
     ACTION_CLEAR_GISTS,
     ACTION_HIDE_ERROR,
     ACTION_LOAD_DEALS_ERROR,
-    ACTION_LOAD_DEALS_SUCCESS, ACTION_SET_FILTERS,
+    ACTION_LOAD_DEALS_SUCCESS,
+    ACTION_SET_FILTERS,
 } from '../actions/action-constants';
 import {normalizeItems} from "../utils";
 
 const initialState = fromJS({
     user: {},
     deals: {},
-    filteredDeals: {},
+    filteredDeals: {
+        TBP0345: {
+            transport: 'train',
+            departure: 'Budapest',
+            arrival: 'Prague',
+            duration: {
+                h: '03',
+                m: '45'
+            },
+            cost: 160,
+            discount: 0,
+            reference: 'TBP0345'
+        },
+        CBP0530: {
+            transport: 'car',
+            departure: 'Budapest',
+            arrival: 'Prague',
+            duration: {
+                h: '05',
+                m: '30'
+            },
+            cost: 120,
+            discount: 0,
+            reference: 'CBP0530'
+        },
+        BBP0615: {
+            transport: 'bus',
+            departure: 'Budapest',
+            arrival: 'Prague',
+            duration: {
+                h: '06',
+                m: '15'
+            },
+            cost: 40,
+            discount: 0,
+            reference: 'BBP0615'
+        }
+    },
     error: '',
 });
 

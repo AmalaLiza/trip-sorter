@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React, { Component, Fragment } from 'react';
 import connect from 'react-redux/es/connect/connect';
 import AutoInput from '../AutoInput/AutoInput';
-import styles from '../PublicGists/DealList.css';
-import { selector } from '../PublicGists/deals.selector';
+import styles from '../DealList/DealList.css';
+import { selector } from '../DealList/deals.selector';
 import Footer from '../Footer/Footer';
 import {setFilters} from "../../actions/action-creator";
 

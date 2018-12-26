@@ -1,0 +1,18 @@
+.gist {
+  height: 100%;
+  width: 100%;
+  background-color: #23292d;
+  border-radius: 8px;
+  color: #fff;
+  margin: 10px 30px 20px 0;
+  transition: all .1s ease-out;
+  box-shadow: 0 0 0 0 transparent,0 0 0 0 transparent;
+}
+
+.dealWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+

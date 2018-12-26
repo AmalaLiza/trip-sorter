@@ -37,20 +37,20 @@
   display: block;
 }
 
-.gistWrapper {
+.dealWrapper {
   display: flex;
   flex-wrap: wrap;
   max-height: calc(100% - 235px);
   overflow: auto;
 }
 
-.gistCount {
+.dealCount {
   font-size: 18px;
   position: relative;
   padding: 10px 0;
 }
 
-.gistCountHeading {
+.dealCountHeading {
   display: inline-block;
   margin: 0;
 }
