@@ -7,7 +7,7 @@
   align-content: stretch;
   overflow: hidden;
   border-radius: 20px;
-  border: 2px solid #ed1c24;
+  border: 2px solid #26ff00;
   margin-right: 10px;
 }
 
@@ -17,10 +17,11 @@
   flex: 1 100%;
   background-color: transparent;
   border-radius: 0;
-  color: #ed1c24;
-  border-right: 2px solid #ed1c24;
+  color: #26ff00;
+  border-right: 2px solid #26ff00;
   transition: all .2s ease-out;
   cursor: pointer;
+  text-align: center;
 }
 
 .buttonGroup .button:last-child {
@@ -28,6 +29,6 @@
 }
 
 .buttonGroup .button:hover, .buttonGroup .button.active {
-  color: #fff;
-  background-color: #ed1c24;
+  color: #000000;
+  background-color: #26ff00;
 }

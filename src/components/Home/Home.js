@@ -6,7 +6,6 @@ import AutoInput from '../AutoInput/AutoInput';
 import styles from '../DealList/DealList.css';
 import { selector } from '../DealList/deals.selector';
 import Footer from '../Footer/Footer';
-import banner from '../../assets/banner.jpg';
 import { setFilters } from '../../actions/action-creator';
 
 class Home extends Component {
@@ -22,14 +21,12 @@ class Home extends Component {
   }
 
   getFromValue(from) {
-    console.log(from);
     this.setState({
       from,
     });
   }
 
   getToValue(to) {
-    console.log(to);
     this.setState({
       to,
     });

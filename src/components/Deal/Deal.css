@@ -19,8 +19,16 @@
 .dealWrapper:hover {
   box-shadow: 0px 4px 30px 1px #000000;
   transition: 1s;
+  cursor: pointer;
 }
 
 .cost {
-font-size: 20px;
+  font-size: 20px;
+  color: lime;
+}
+
+
+.icon{
+  margin-right: 10px;
+  font-size: 20px;
 }
