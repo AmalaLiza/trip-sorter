@@ -5,20 +5,18 @@ import styles from './Deal.css';
 
 class Deal extends Component {
     static propTypes = {
-        gist: PropTypes.instanceOf(Immutable.Map),
-
+        deal: PropTypes.instanceOf(Immutable.Map),
     };
 
     static defaultProps = {
-        gist: Immutable.fromJS({}),
-
+        deal: Immutable.fromJS({}),
     };
 
     render() {
         const {deal} = this.props;
 
         return (
-            <div className={styles.gist}>
+            <div className={styles.deal}>
                 <div className={styles.dealWrapper}>
                     <div>{deal.get('departure')} to {deal.get('arrival')}</div>
                     <div>

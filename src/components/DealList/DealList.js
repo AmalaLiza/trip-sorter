@@ -88,9 +88,8 @@ class DealList extends Component {
 }
 
 DealList.propTypes = {
-    gists: PropTypes.instanceOf(Immutable.Map).isRequired,
+    filteredDeals: PropTypes.instanceOf(Immutable.Map).isRequired,
     dispatch: PropTypes.func.isRequired,
-    user: PropTypes.instanceOf(Immutable.Map).isRequired,
 };
 
 const mapStateToProps = state => selector(state);
