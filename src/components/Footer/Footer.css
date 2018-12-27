@@ -7,11 +7,12 @@
 
 .wrapper {
     height: 75px;
-    background-color: #384152db;
+    background-color: #f25d48;
     padding: 10px 60px;
     position: relative;
     display: flex;
     justify-content: center;
+    font-weight: bold;
 }
 
 .logoWrapper {

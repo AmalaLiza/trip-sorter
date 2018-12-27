@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component, Fragment } from 'react';
 import connect from 'react-redux/es/connect/connect';
 import AutoInput from '../AutoInput/AutoInput';
-import styles from '../DealList/DealList.css';
+import styles from './Home.css';
 import { selector } from '../DealList/deals.selector';
 import Footer from '../Footer/Footer';
 import { setFilters, showError } from '../../actions/action-creator';
@@ -49,8 +49,7 @@ class Home extends Component {
     return (
       <Fragment>
         <div className={styles.bannerWrapper}>
-          <div className={styles.bannerImg}>
-                        Trip Sorter
+          <div className={styles.banner}>
           </div>
         </div>
         <section className={styles.search}>

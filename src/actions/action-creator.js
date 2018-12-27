@@ -4,7 +4,8 @@ import {
   ACTION_SET_FILTERS,
   ACTION_LOAD_DEALS,
   ACTION_LOAD_DEALS_ERROR,
-  ACTION_LOAD_DEALS_SUCCESS, ACTION_SHOW_ERROR,
+  ACTION_LOAD_DEALS_SUCCESS,
+  ACTION_SHOW_ERROR,
 } from './action-constants';
 
 export const setFilters = (to, from) => ({

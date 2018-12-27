@@ -1,0 +1,32 @@
+.bannerWrapper {
+    height: 380px;
+    position: relative;
+    padding-top: 40px;
+}
+
+.banner {
+    margin: auto;
+    display: block;
+    height: 380px;
+    background: url("./../../assets/logo.svg") no-repeat center;
+    background-size: contain;
+    position: relative;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.input {
+    margin-right: 25px;
+}
+
+.icon {
+    color: #191c1e;
+    right: 13px;
+    font-size: 18px;
+    cursor: pointer;
+}
