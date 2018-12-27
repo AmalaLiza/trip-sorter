@@ -5,5 +5,5 @@ import loadDeals from './sagas/loadDeals.saga';
  * * */
 
 export default [
-    loadDeals,
+  loadDeals,
 ];
