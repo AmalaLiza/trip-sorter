@@ -6,7 +6,7 @@ import AutoInput from '../AutoInput/AutoInput';
 import styles from '../DealList/DealList.css';
 import { selector } from '../DealList/deals.selector';
 import Footer from '../Footer/Footer';
-import { setFilters } from '../../actions/action-creator';
+import { setFilters, showError } from '../../actions/action-creator';
 
 class Home extends Component {
   constructor(props) {
@@ -33,7 +33,15 @@ class Home extends Component {
   }
 
   onSearchClick() {
-    this.props.dispatch(setFilters(this.state.to, this.state.from));
+    const { to, from } = this.state;
+    if (to && from) {
+      this.props.dispatch(setFilters(to, from));
+    } else {
+      let error = '';
+      if (!from) error = 'Please enter your boarding point.';
+      else if (!to) error = 'Please enter your destination point.';
+      this.props.dispatch(showError(error));
+    }
   }
 
   render() {
