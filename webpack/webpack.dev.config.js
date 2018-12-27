@@ -36,6 +36,7 @@ const getConfig = () => ({
   module: {
     rules: [
       {
+        type: 'javascript/auto',
         test: /\.(svg|ttf|png|jpg|jpeg(2)?)(\?[a-z0-9]+)?$/,
         use: [
           { loader: 'file-loader' },
@@ -45,11 +46,6 @@ const getConfig = () => ({
         test: /\.html$/,
         loader: 'url-loader',
         exclude: [/index.html/],
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader',
-        type: 'javascript/auto',
       },
       {
         test: /\.css$/,

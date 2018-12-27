@@ -27,6 +27,7 @@ module.exports = () => ({
   module: {
     rules: [
       {
+        type: 'javascript/auto',
         test: /\.(svg|ttf|png|jpg|jpeg(2)?)(\?[a-z0-9]+)?$/,
         use: [
           { loader: 'file-loader' },
@@ -71,7 +72,6 @@ module.exports = () => ({
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
-
     ],
   },
   resolve: {
