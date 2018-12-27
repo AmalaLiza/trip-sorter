@@ -34,7 +34,7 @@ class Home extends Component {
 
   onSearchClick() {
     const { to, from } = this.state;
-    if (to === from) {
+    if (to && from && to === from) {
       this.props.dispatch(showError('Please enter a different destination.'));
     } else if (to && from) {
       this.props.dispatch(setFilters(to, from));

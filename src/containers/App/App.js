@@ -49,7 +49,7 @@ class App extends Component {
           {filteredDeals.size ? <DealList /> : <Home />}
           {error || noResults ? (
             <ErrorPopup
-              error={error || 'No results found.'}
+              error={error || 'Oops! No results found for the search. Please try again.'}
               hideError={this.hideError}
             />
           ) : null}
