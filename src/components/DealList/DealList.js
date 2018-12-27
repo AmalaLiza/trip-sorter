@@ -13,7 +13,7 @@ const DealCount = ({ count, from, to, onClick }) => (
   <div className={`${styles.dealCount} bold`}>
     <i className={classNames('fa fa-arrow-left', styles.backBtn)} onClick={onClick} />
     <h3 className={styles.dealCountHeading}>
-      {`Available deals from${from.toUpperCase()} to ${to.toUpperCase()} (${count})`}
+      {`Available deals from ${from.toUpperCase()} to ${to.toUpperCase()} (${count})`}
     </h3>
   </div>
 );
