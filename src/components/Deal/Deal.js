@@ -7,7 +7,7 @@ import styles from './Deal.css';
 const Deal = ({ deal }) => (
   <div className={styles.deal}>
     <div className={styles.dealWrapper}>
-      <div>
+      <div className={styles.transport}>
         <i className={classNames(`fa fa-${deal.get('transport')}`, styles.icon)} aria-hidden="true" />
         {deal.get('transport')}
       </div>
