@@ -17,7 +17,7 @@ const Deal = ({ deal }) => (
       </div>
       <div>
         <div>
-                Discount: ${deal.get('discount')}
+                Discount: €{deal.get('discount')}
         </div>
         <div>
                 Reference Id: {deal.get('reference')}
@@ -25,7 +25,7 @@ const Deal = ({ deal }) => (
       </div>
       <div>
             Cost:
-        <span className={styles.cost}>{` $${deal.get('cost')}`}</span>
+        <span className={styles.cost}>{` €${deal.get('cost')}`}</span>
       </div>
     </div>
   </div>

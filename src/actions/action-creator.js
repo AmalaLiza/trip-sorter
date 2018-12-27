@@ -1,11 +1,11 @@
 import {
-  ACTION_CLEAR_GISTS,
   ACTION_HIDE_ERROR,
   ACTION_SET_FILTERS,
   ACTION_LOAD_DEALS,
   ACTION_LOAD_DEALS_ERROR,
   ACTION_LOAD_DEALS_SUCCESS,
   ACTION_SHOW_ERROR,
+  ACTION_CLEAR_DEALS,
 } from './action-constants';
 
 export const setFilters = (to, from) => ({
@@ -42,5 +42,5 @@ export const hideError = () => ({
 });
 
 export const clearSearch = () => ({
-  type: ACTION_CLEAR_GISTS,
+  type: ACTION_CLEAR_DEALS,
 });

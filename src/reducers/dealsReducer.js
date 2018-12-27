@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import {
-  ACTION_CLEAR_DEAL,
+  ACTION_CLEAR_DEALS,
   ACTION_HIDE_ERROR,
   ACTION_SET_FILTERS,
   ACTION_SHOW_ERROR,
@@ -44,7 +44,7 @@ export default function dealsReducer(state = initialState, action) {
     case ACTION_HIDE_ERROR:
       return state.update('error', () => '');
 
-    case ACTION_CLEAR_DEAL:
+    case ACTION_CLEAR_DEALS:
       return state.update('filteredDeals', () => fromJS({}));
 
     default:
