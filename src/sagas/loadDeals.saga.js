@@ -1,8 +1,7 @@
 import { call, put, take } from 'redux-saga/effects';
 import { loadDealsError, loadDealsSuccess } from '../actions/action-creator';
 import { ACTION_LOAD_DEALS } from '../actions/action-constants';
-
-const JSON_DATA = require('./response.json');
+import JSON_DATA from './response.json';
 
 /**
  * Makes GET request
