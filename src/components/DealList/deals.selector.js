@@ -4,7 +4,8 @@ export const selector = state => ({
   arrival: state.deals.get('arrival'),
 });
 
-export const getError = state => ({
+export const appSelector = state => ({
   error: state.deals.get('error'),
   filteredDeals: state.deals.get('filteredDeals'),
+  noResults: state.deals.get('noResults'),
 });

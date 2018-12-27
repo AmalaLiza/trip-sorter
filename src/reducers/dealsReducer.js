@@ -13,6 +13,7 @@ const initialState = fromJS({
   deals: {},
   filteredDeals: {},
   error: '',
+  noResults: false,
 });
 
 export default function dealsReducer(state = initialState, action) {
@@ -35,14 +36,19 @@ export default function dealsReducer(state = initialState, action) {
     case ACTION_SET_FILTERS: {
       let newState = state.set('to', action.payload.to);
       newState = newState.set('from', action.payload.from);
-      return newState.update('filteredDeals', () => state.get('deals').filter(deal => deal.get('arrival') === action.payload.to && deal.get('departure') === action.payload.from));
+      const results = state.get('deals')
+        .filter(deal => deal.get('arrival') === action.payload.to && deal.get('departure') === action.payload.from);
+      newState = newState.update('noResults', () => !results.size);
+      return newState.update('filteredDeals', () => results);
     }
 
     case ACTION_SHOW_ERROR:
       return state.update('error', () => fromJS(action.payload));
 
-    case ACTION_HIDE_ERROR:
-      return state.update('error', () => '');
+    case ACTION_HIDE_ERROR: {
+      const newState = state.update('noResults', () => false);
+      return newState.update('error', () => '');
+    }
 
     case ACTION_CLEAR_DEALS:
       return state.update('filteredDeals', () => fromJS({}));

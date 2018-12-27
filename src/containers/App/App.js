@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import ErrorPopup from '../../components/ErrorPopup/ErrorPopup';
 import DealList from '../../components/DealList/DealList';
 import Home from '../../components/Home/Home';
-import { getError } from '../../components/DealList/deals.selector';
+import { appSelector } from '../../components/DealList/deals.selector';
 import { hideError, loadDeals } from '../../actions/action-creator';
 import '../../global.css';
 
@@ -14,12 +14,14 @@ class App extends Component {
       error: PropTypes.string,
       filteredDeals: PropTypes.instanceOf(Immutable.Map),
       dispatch: PropTypes.func,
+      noResults: PropTypes.bool,
     };
 
     static defaultProps = {
       error: '',
       filteredDeals: Immutable.fromJS({}),
       dispatch: f => f,
+      noResults: false,
     };
 
     constructor(props) {
@@ -41,13 +43,13 @@ class App extends Component {
     }
 
     render() {
-      const { filteredDeals, error } = this.props;
+      const { filteredDeals, error, noResults } = this.props;
       return (
         <Fragment>
           {filteredDeals.size ? <DealList /> : <Home />}
-          {error ? (
+          {error || noResults ? (
             <ErrorPopup
-              error={error}
+              error={error || 'No results found.'}
               hideError={this.hideError}
             />
           ) : null}
@@ -56,5 +58,5 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = state => getError(state);
+const mapStateToProps = state => appSelector(state);
 export default connect(mapStateToProps)(App);
