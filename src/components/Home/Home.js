@@ -49,7 +49,12 @@ class Home extends Component {
     return (
       <Fragment>
         <div className={styles.bannerWrapper}>
-          <div className={styles.banner}>
+          <div className={styles.heading}>
+            Trip Sorter
+          </div>
+          <div className={styles.banner} />
+          <div className={styles.text}>
+                What's your next dream destination?
           </div>
         </div>
         <section className={styles.search}>

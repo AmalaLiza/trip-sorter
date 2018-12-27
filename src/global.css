@@ -10,7 +10,7 @@ html,#root {
 }
 
 body {
-    font-family: 'Muli', 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-size: cover;
@@ -27,52 +27,7 @@ a, button, input, textarea {
     outline: none;
     border: 0;
     background: none;
-    font-family: 'Muli', 'Open Sans', sans-serif;
-}
-
-@font-face {
-    font-family: Muli;
-    src: url('./fonts/Muli/Muli-Black.ttf');
-    font-style: normal;
-    font-weight: 900;
-}
-
-@font-face {
-    font-family: Muli;
-    src: url('./fonts/Muli/Muli-Bold.ttf');
-    font-style: normal;
-    font-weight: bold;
-}
-
-
-@font-face {
-    font-family: Muli;
-    src: url('./fonts/Muli/Muli-Light.ttf');
-    font-style: normal;
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: Muli;
-    src: url('./fonts/Muli/Muli-SemiBold.ttf');
-    font-style: normal;
-    font-weight: 600;
-}
-
-
-@font-face {
-    font-family: Muli;
-    src: url('./fonts/Muli/Muli-Regular.ttf');
-    font-style: normal;
-    font-weight: 400;
-}
-
-
-@font-face {
-    font-family: Muli;
-    src: url('./fonts/Muli/Muli-ExtraLight.ttf');
-    font-style: normal;
-    font-weight: 200;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .bold {
