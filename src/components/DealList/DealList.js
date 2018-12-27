@@ -88,7 +88,8 @@ class DealList extends Component {
         <DealWrapper className={styles.dealWrapper}>
           {filteredDeals
             .valueSeq()
-            .sort((a, b) => (sortType === 'cheapest' ? a.get('cost') - b.get('cost') : a.getIn(['duration', 'h']) - b.getIn(['duration', 'h'])))
+            .sort((a, b) => (sortType === 'cheapest' ? a.get('cost') - b.get('cost')
+              : (a.getIn(['duration', 'h']) * 60 + a.getIn(['duration', 'm'])) - (b.getIn(['duration', 'h']) * 60 + b.getIn(['duration', 'm']))))
             .map(deal => (
               <Deal
                 key={deal.get('reference')}
